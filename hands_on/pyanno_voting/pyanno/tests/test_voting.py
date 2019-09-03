@@ -50,6 +50,6 @@ def test_label_frequency():
          [1, 2, 2]]
     )
     n_classes = 4
-    expected = [2, 3, 1, 0]
+    expected = np.array([2/6, 3/6, 1/6, 0/6])
     result = voting.labels_frequency(annotations, n_classes)
-    assert result == expected
+    assert np.allclose(result, expected, rtol = 1e-6)
